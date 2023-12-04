@@ -57,8 +57,8 @@ const CountryContainer = () => {
 
 
     return ( 
-        <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
-        <h1>Country Bucket List!!</h1>
+        <div className={`container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+        <h1>Which countries have you been to?? 🗺️👀</h1>
             <div className='filterCountries'>
                 <div className='dark-mode-toggle'>
                     <label>
@@ -70,19 +70,22 @@ const CountryContainer = () => {
                             />
                     </label>
                 </div>
-            <h2>Filter Countries</h2>
-            <form>
-                <label>
-                    Filter:
-                    <input 
-                        type='text'
-                        value={filter}
-                        onChange={handleFilterChange}/>
-                </label>
-            </form>
+                    <div className='searchForm'>
+                    <form>
+                        <label>
+                            Filter:
+                            <input 
+                                placeholder='Country Name...'
+                                type='text'
+                                value={filter}
+                                onChange={handleFilterChange}/>
+                        </label>
+                    </form>
+                    </div>
             </div>
+            <section className='flexContainer'>
             <div className='bucketListCountries'>
-            <h2>Countries to visit:</h2>
+            <h2>Bucket List: 🪣</h2>
                 <ul> 
                     {filterCountries.map((country) => (
                         <Country
@@ -93,7 +96,7 @@ const CountryContainer = () => {
                 </ul>
         </div>
         <div className='visitedCountries'>
-            <h2>Visited Countries:</h2>
+            <h2>Visited Countries: 🌎✅</h2>
                 <ul>
                     {visitedCountries.map((visitedCountries) => (
                         <li>{visitedCountries.name.common}
@@ -104,6 +107,10 @@ const CountryContainer = () => {
                     ))}
                 </ul>
         </div>
+        </section>
+        <footer>
+            <p>&copy; 2023 Which countries have you been to?? 🗺️👀</p>
+        </footer>
         </div>
     );
 }

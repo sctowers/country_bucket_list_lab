@@ -11,7 +11,7 @@ const Country = ({country, visited }) => {
         <li>
             {country.name.common}
             <button onClick={visited}>Visited?</button>
-            <button onClick={showDetails}>Show Country details</button>
+            <button onClick={showDetails}>Show More Country Details</button>
             {details && (
                 <div>
                     <h3>Details:</h3>
