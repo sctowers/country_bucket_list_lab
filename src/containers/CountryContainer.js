@@ -1,9 +1,11 @@
 import Country from '../components/Country'
 import { useState, useEffect } from 'react';
+import '../styles.css'
 
 const CountryContainer = () => {
     const [countries, setCountries] = useState([]);
     const [visitedCountries, setVisitedCountries] = useState([]);
+    const [filter, setFilter] = useState('')
 
     const loadCountriesData = async () => {
         const response = await fetch("https://restcountries.com/v3.1/all")
@@ -22,14 +24,33 @@ const CountryContainer = () => {
         }
     }
 
+    const handleFilterChange = (event) => {
+        setFilter(event.target.value)
+    }
+
+    const filterCountries = countries.filter((country) => 
+    country.name.common.toLowerCase().includes(filter.toLowerCase()))
+
 
     return ( 
         <>
-        <div className='bucketListCountries'>
-            <h1>Country Bucket List!!</h1>
+        <h1>Country Bucket List!!</h1>
+            <div className='filterCountries'>
+            <h2>Filter Countries</h2>
+            <form>
+                <label>
+                    Filter:
+                    <input 
+                        type='text'
+                        value={filter}
+                        onChange={handleFilterChange}/>
+                </label>
+            </form>
+            </div>
+            <div className='bucketListCountries'>
             <h2>Countries to visit:</h2>
                 <ul> 
-                    {countries.map((country) => (
+                    {filterCountries.map((country) => (
                         <Country
                             country={country}
                             visited={() => checkAsVisited(country)}
