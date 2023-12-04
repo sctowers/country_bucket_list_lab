@@ -18,9 +18,10 @@ const CountryContainer = () => {
     }, []
     )
 
-    const checkAsVisited = (country) => {
-        if (!visitedCountries.includes(country)) {
-            setVisitedCountries([...visitedCountries, country])
+    const checkAsVisited = (visitedCountry) => {
+        if (!visitedCountries.includes(visitedCountry)) {
+            setVisitedCountries([...visitedCountries, visitedCountry])
+            setCountries(countries.filter((country) => country != visitedCountry))
         }
     }
 

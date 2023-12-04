@@ -18,7 +18,7 @@ const Country = ({country, visited }) => {
                     <p>Capital: {country.capital}</p>
                     <p>Languages: {country.languages.eng}</p>
                     <p>Population: {country.population}</p>
-                    <img src={country.flag} alt={`Flag of ${country.name.common}`}/>
+                    <p>Flag: {country.flag}</p>
                 </div>
             )}
         </li>
