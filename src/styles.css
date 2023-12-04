@@ -47,16 +47,6 @@ button {
 
 }
 
-input {
-    background-color: ghostwhite;
-    color: #8a1253;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
 .flexContainer {
     display: flex;
     justify-content: space-between;

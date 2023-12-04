@@ -38,7 +38,7 @@ const CountryContainer = () => {
         setVisitedCountries((previousVisited) =>
         previousVisited.filter((country) => country !== countryToRemove)
         );
-        setCountries((previousVisited) => [...previousVisited, countryToRemove]);
+        setCountries((previousVisited) => [countryToRemove, ...previousVisited]);
     };
 
     // function to handle the filter
