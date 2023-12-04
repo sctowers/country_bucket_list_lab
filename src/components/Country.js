@@ -16,7 +16,7 @@ const Country = ({country, visited }) => {
                 <div>
                     <h3>Details:</h3>
                     <p>Capital: {country.capital}</p>
-                    <p>Languages: {country.languages.eng}</p>
+                    <p>Languages: {Object.values(country.languages).join(", ")}</p>
                     <p>Population: {country.population}</p>
                     <p>Flag: {country.flag}</p>
                 </div>
