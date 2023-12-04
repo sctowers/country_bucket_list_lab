@@ -62,7 +62,7 @@ const CountryContainer = () => {
             <div className='filterCountries'>
                 <div className='dark-mode-toggle'>
                     <label>
-                        Dark Mode 🌚:
+                        Dark Mode: 🌚
                         <input
                             type='checkbox'
                             checked={darkMode}
@@ -73,7 +73,7 @@ const CountryContainer = () => {
                     <div className='searchForm'>
                     <form>
                         <label>
-                            Filter 🔎:
+                            Filter: 🔎
                             <input 
                                 placeholder='Country Name...'
                                 type='text'
