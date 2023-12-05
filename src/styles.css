@@ -17,7 +17,7 @@ h1 {
 
 }
 
-.filterCountries{
+.filterCountries {
     max-width: 30%;
     margin: 50px auto;
     padding: 20px;
@@ -26,7 +26,8 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.bucketListCountries, .visitedCountries {
+.bucketListCountries,
+.visitedCountries {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
@@ -64,7 +65,10 @@ footer {
     color: #8a1253;
 }
 
-.light-mode .filterCountries, .bucketListCountries, .visitedCountries, h1 {
+.light-mode .filterCountries,
+.bucketListCountries,
+.visitedCountries,
+h1 {
     background-color: #faf5e4;
 }
 
@@ -86,7 +90,7 @@ footer {
 .dark-mode h1 {
     color: #faf5e4;
     background-color: black;
-} 
+}
 
 .dark-mode .filterCountries {
     background-color: black;
