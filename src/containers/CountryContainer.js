@@ -99,7 +99,8 @@ const CountryContainer = () => {
             <h2>Visited Countries: 🌎✅</h2>
                 <ul>
                     {visitedCountries.map((visitedCountries) => (
-                        <li>{visitedCountries.name.common}
+                        <li>
+                            <h3>{visitedCountries.name.common}</h3>
                             <button onClick={() => removeVisitedCountry(visitedCountries)}>
                                 Remove
                             </button>
