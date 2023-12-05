@@ -36,7 +36,7 @@ const CountryContainer = () => {
     // function to remove a visited country
     const removeVisitedCountry = (countryToRemove) => {
         setVisitedCountries((previousVisited) =>
-        previousVisited.filter((country) => country !== countryToRemove)
+            previousVisited.filter((country) => country !== countryToRemove)
         );
         setCountries((previousVisited) => [countryToRemove, ...previousVisited]);
     };
@@ -47,8 +47,8 @@ const CountryContainer = () => {
     }
 
     // function to filter countries 
-    const filterCountries = countries.filter((country) => 
-    country.name.common.toLowerCase().includes(filter.toLowerCase()))
+    const filterCountries = countries.filter((country) =>
+        country.name.common.toLowerCase().includes(filter.toLowerCase()))
 
     // function to toggle dark mode
     const toggleDarkMode = () => {
@@ -56,9 +56,9 @@ const CountryContainer = () => {
     }
 
 
-    return ( 
+    return (
         <div className={`container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
-        <h1>Which countries have you been to?? 🗺️👀</h1>
+            <h1>Which countries have you been to?? 🗺️👀</h1>
             <div className='filterCountries'>
                 <div className='dark-mode-toggle'>
                     <label>
@@ -67,51 +67,51 @@ const CountryContainer = () => {
                             type='checkbox'
                             checked={darkMode}
                             onChange={toggleDarkMode}
-                            />
+                        />
                     </label>
                 </div>
-                    <div className='searchForm'>
+                <div className='searchForm'>
                     <form>
                         <label>
                             Filter: 🔎
-                            <input 
+                            <input
                                 placeholder='Country Name...'
                                 type='text'
                                 value={filter}
-                                onChange={handleFilterChange}/>
+                                onChange={handleFilterChange} />
                         </label>
                     </form>
-                    </div>
+                </div>
             </div>
             <section className='flexContainer'>
-            <div className='bucketListCountries'>
-            <h2>Bucket List: 🪣</h2>
-                <ul> 
-                    {filterCountries.map((country) => (
-                        <Country
-                            country={country}
-                            visited={() => checkAsVisited(country)}
+                <div className='bucketListCountries'>
+                    <h2>Bucket List: 🪣</h2>
+                    <ul>
+                        {filterCountries.map((country) => (
+                            <Country
+                                country={country}
+                                visited={() => checkAsVisited(country)}
                             />
-                    ))}
-                </ul>
-        </div>
-        <div className='visitedCountries'>
-            <h2>Visited Countries: 🌎✅</h2>
-                <ul>
-                    {visitedCountries.map((visitedCountries) => (
-                        <li>
-                            <h3>{visitedCountries.name.common}</h3>
-                            <button onClick={() => removeVisitedCountry(visitedCountries)}>
-                                Remove
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-        </div>
-        </section>
-        <footer>
-            <p>&copy; 2023 Which countries have you been to?? 🗺️👀</p>
-        </footer>
+                        ))}
+                    </ul>
+                </div>
+                <div className='visitedCountries'>
+                    <h2>Visited Countries: 🌎✅</h2>
+                    <ul>
+                        {visitedCountries.map((visitedCountries) => (
+                            <li>
+                                <h3>{visitedCountries.name.common}</h3>
+                                <button onClick={() => removeVisitedCountry(visitedCountries)}>
+                                    Remove
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </section>
+            <footer>
+                <p>&copy; 2023 Which countries have you been to?? 🗺️👀</p>
+            </footer>
         </div>
     );
 }

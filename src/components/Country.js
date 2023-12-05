@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const Country = ({country, visited }) => {
+const Country = ({ country, visited }) => {
     const [details, setDetails] = useState(false)
 
     const showDetails = () => {
         setDetails(!details)
     }
 
-    return ( 
+    return (
         <li>
             <h3>{country.name.common + " " + country.flag + " "}</h3>
             <button onClick={visited}>Visited?</button>
@@ -17,17 +17,17 @@ const Country = ({country, visited }) => {
                     <h3>Details:</h3>
                     {country.name.common === 'Antarctica' ? (
                         <>
-                        <p>Capital: n/a</p>
-                        <p>Languages: n/a</p>
-                        <p>Population: {country.population}</p>
+                            <p>Capital: n/a</p>
+                            <p>Languages: n/a</p>
+                            <p>Population: {country.population}</p>
                         </>
-                        ) : (
+                    ) : (
                         <>
-                        <p>Capital: {country.capital}</p>
-                        <p>Languages: {Object.values(country.languages).join(", ")}</p>
-                        <p>Population: {country.population}</p>
+                            <p>Capital: {country.capital}</p>
+                            <p>Languages: {Object.values(country.languages).join(", ")}</p>
+                            <p>Population: {country.population}</p>
                         </>
-                        )}
+                    )}
                 </div>
             )}
         </li>
