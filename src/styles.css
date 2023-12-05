@@ -44,7 +44,6 @@ button {
     cursor: pointer;
     border-radius: 4px;
     font-size: 16px;
-
 }
 
 .flexContainer {
@@ -77,7 +76,7 @@ footer {
 /* Dark mode styles */
 .dark-mode {
     background-color: #8a1253;
-    color: #fda403;
+    color: #faf5e4;
 }
 
 .dark-mode .visitedCountries {
@@ -95,4 +94,8 @@ footer {
 
 .dark-mode .bucketListCountries {
     background-color: black;
+}
+
+.dark-mode button {
+    background-color: #8a1253;
 }
