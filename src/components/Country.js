@@ -9,7 +9,7 @@ const Country = ({country, visited }) => {
 
     return ( 
         <li>
-            {country.name.common}
+            <h3>{country.name.common + " " + country.flag + " "}</h3>
             <button onClick={visited}>Visited?</button>
             <button onClick={showDetails}>Show More Country Details</button>
             {details && (
@@ -20,14 +20,12 @@ const Country = ({country, visited }) => {
                         <p>Capital: n/a</p>
                         <p>Languages: n/a</p>
                         <p>Population: {country.population}</p>
-                        <p>Flag: {country.flag}</p>
                         </>
                         ) : (
                         <>
                         <p>Capital: {country.capital}</p>
                         <p>Languages: {Object.values(country.languages).join(", ")}</p>
                         <p>Population: {country.population}</p>
-                        <p>Flag: {country.flag}</p>
                         </>
                         )}
                 </div>
