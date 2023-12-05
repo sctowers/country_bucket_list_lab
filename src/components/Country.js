@@ -15,10 +15,21 @@ const Country = ({country, visited }) => {
             {details && (
                 <div>
                     <h3>Details:</h3>
-                    <p>Capital: {country.capital}</p>
-                    <p>Languages: {Object.values(country.languages).join(", ")}</p>
-                    <p>Population: {country.population}</p>
-                    <p>Flag: {country.flag}</p>
+                    {country.name.common === 'Antarctica' ? (
+                        <>
+                        <p>Capital: n/a</p>
+                        <p>Languages: n/a</p>
+                        <p>Population: {country.population}</p>
+                        <p>Flag: {country.flag}</p>
+                        </>
+                        ) : (
+                        <>
+                        <p>Capital: {country.capital}</p>
+                        <p>Languages: {Object.values(country.languages).join(", ")}</p>
+                        <p>Population: {country.population}</p>
+                        <p>Flag: {country.flag}</p>
+                        </>
+                        )}
                 </div>
             )}
         </li>
