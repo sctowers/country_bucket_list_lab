@@ -1,18 +1,20 @@
 import { useState } from "react";
 
 const Country = ({ country, visited }) => {
-    const [details, setDetails] = useState(false)
+    const [visibleDetails, setVisibleDetails] = useState(false)
 
-    const showDetails = () => {
-        setDetails(!details)
+    const toggleDetails = () => {
+        setVisibleDetails(!visibleDetails)
     }
 
     return (
         <li>
             <h3>{country.name.common + " " + country.flag + " "}</h3>
             <button onClick={visited}>Visited?</button>
-            <button onClick={showDetails}>Show More Country Details</button>
-            {details && (
+            <button onClick={toggleDetails}>
+                {visibleDetails ? "Hide Details" : "Show More Details"}
+            </button>
+            {visibleDetails && (
                 <div>
                     <h3>Details:</h3>
                     {country.name.common === 'Antarctica' ? (
