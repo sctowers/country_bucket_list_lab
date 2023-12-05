@@ -9,7 +9,7 @@ const Country = ({ country, visited }) => {
 
     return (
         <li>
-            <h3>{country.name.common + " " + country.flag + " "}</h3>
+            <h3>{country.name.common + " " + country.flag}</h3>
             <button onClick={visited}>Visited?</button>
             <button onClick={toggleDetails}>
                 {visibleDetails ? "Hide Details" : "Show More Details"}
